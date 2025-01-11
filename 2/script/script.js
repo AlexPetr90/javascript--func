@@ -3,9 +3,9 @@ inpCoffee = document.querySelector('.coffee')
 inpCookie = document.querySelector('.cookie')
 btn = document.querySelector('.btn')
 sum = document.querySelector ('.sum')
+mesage = document.querySelector ('.mesage')
 
-
-btn.addEventListener ('click', (ev) => {
+const func = () => {
 
     if (inpTea.checked ) {
         sum.innerHTML = "до сплати: 10 грн."
@@ -31,7 +31,21 @@ btn.addEventListener ('click', (ev) => {
     if (!inpTea.checked && !inpCoffee.checked && !inpCookie.checked) {
         sum.innerHTML = "ви нічого не обрали"
     }
+}
+inpTea.addEventListener('change', func)
+inpCoffee.addEventListener('change', func)
+inpCookie.addEventListener('change', func)
+
+btn.addEventListener ('click', (ev) => {
+
+    mesage.innerHTML = "Дякуємо за покупку"
+    setTimeout (() => {
+    mesage.innerHTML = ""
+    sum.innerHTML = ""
+   }, 5000)
 })
+
+
 
 
 
